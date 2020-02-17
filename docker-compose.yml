@@ -1,0 +1,39 @@
+version: '3.4'
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: ./docker-src/express/Dockerfile
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./api:/home/node/app
+    expose:
+      - "3000"
+    ports:
+      - 3000:3000
+    command: "nodemon npm start"
+
+  client:
+    image: "node:latest"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./client:/home/node/app
+    expose:
+      - "3000"
+    ports:
+      - 8081:3000
+    command: "npm start"
+
+networks:
+  connector:
+
+volumes:
+  database: {}
+  esdata:
