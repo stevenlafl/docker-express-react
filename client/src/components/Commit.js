@@ -4,27 +4,19 @@
 import React, { useState, useEffect } from 'react';
 
 function Commit(props) {
-  const [a, setA] = useState("");
-  const [b, setB] = useState("");
+  const [commit, setCommit] = useState([]);
 
   useEffect(() => {
-    console.log("Effect 2...." + props.a);
-    if (props.a) {
-      setA(props.a);
+    console.log("Effect 2...." + props.commit);
+    if (props.commit) {
+      setCommit(props.commit);
     }
-  }, [props.a]);
-
-  useEffect(() => {
-    console.log("Effect 3...." + props.b);
-    if (props.b) {
-      setB(props.b);
-    }
-  }, [props.b]);
+  }, [props.commit]);
 
   return (
-    <div className={"commit"}>
-      Commit
-    </div>
+    <li className={"commit"}>
+      Commit: {commit}
+    </li>
   );
 }
 

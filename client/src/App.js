@@ -31,7 +31,7 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo" onClick={(e) => {setAPIResponse('test')}} />
         <CommitList commits={apiResponse} />
         <a
           className="App-link"

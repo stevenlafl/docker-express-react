@@ -18,7 +18,7 @@ function CommitList(props) {
     <div className={"commits"}>
       <ul>
         {commits.map(c => (
-          <Commit commit={c} />
+          <Commit commit={c} key={c}/>
         ))}
       </ul>
     </div>
