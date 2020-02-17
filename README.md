@@ -15,8 +15,11 @@ npm install
 
 ## Starting/reloading
 `make start` to start
+
 `make stop` to stop
+
 `make restart` to restart
+
 `make rebuild` to rebuild and restart if you made changes to the Dockerfile or docker-compose.yml
 
 ## Usage
