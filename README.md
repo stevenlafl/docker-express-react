@@ -6,14 +6,11 @@ Just modify, reload, and iterate.
 
 ## Installation
 
-```
-cd client
-npm install
-cd ../api
-npm install
-```
+Simply:
 
-## Starting/reloading
+`make start`
+
+## Other commands
 `make start` to start
 
 `make stop` to stop
