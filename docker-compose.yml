@@ -2,6 +2,7 @@ version: '3.4'
 services:
 
   api:
+    container_name: ${PROJECT}-api
     build:
       context: ./
       dockerfile: ./docker-src/express/Dockerfile
@@ -11,14 +12,17 @@ services:
       - NODE_ENV=production
     volumes:
       - ./api:/home/node/app
+      - ./client/build:/home/node/app/build
       - /home/node/app/node_modules/
+      - /home/stevenlafl/voa-voltron:/home/node/repo
     expose:
       - "3000"
     ports:
-      - 3000:3000
+      - 8081:3000
     command: "nodemon npm start"
 
   client:
+    container_name: ${PROJECT}-client
     build:
       context: .
       dockerfile: ./docker-src/react/Dockerfile
@@ -32,5 +36,5 @@ services:
     expose:
       - "3000"
     ports:
-      - 8081:3000
+      - 3000:3000
     command: "npm start"

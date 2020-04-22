@@ -13,7 +13,7 @@ import CommitList from "./components/CommitList";
 function App(props) {
 
   function callAPI() {
-    fetch("http://localhost:3000/api")
+    fetch("http://localhost:8081/api")
       .then(res => res.text())
       .then(res => {
         console.log(res);
