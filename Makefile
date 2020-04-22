@@ -80,3 +80,5 @@ clean: destroy # Removes all artifacts built via make or docker
 
 rebuild: destroy init # Destroy and rebuild the environment
 
+build:
+	bin/client npm run-script build
