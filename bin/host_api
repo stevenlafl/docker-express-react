@@ -9,4 +9,4 @@ for PARAM in "$@"
 do
   PARAMS="${PARAMS} \"${PARAM}\""
 done
-docker exec -u root -it ${PROJECT}-client sh -c "npm ${PARAMS}"
+docker exec -u root -it ${PROJECT}-api sh -c "${PARAMS}"
